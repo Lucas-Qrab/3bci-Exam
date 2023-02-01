@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <section class="container">
+        <div class="card">
+            <img src="{{ media.imageUrl }}" alt="{{ media.name }}">
+            <hr>
+            <div class="card-body">
+                <h3>{{ media.name }}</h3>
+                <p>{{ media.synopsis }}</p>
+            </div>
+            <hr>
+            <div class="card-author">
+                <p>{{ media.Author }}</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

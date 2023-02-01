@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Media Create{% endblock %}
+
+{% block body %}
+    <section class="container">
+        {{ form_start(form) }}
+            <h1>Ajouter un nouveau Media</h1>
+            <div>
+                {{ form_row(form.name) }}
+                {{ form_errors(form) }}
+            </div>
+            <div>
+                {{ form_row(form.synopsis) }}
+            </div>
+            <div>
+                {{ form_row(form.type)}}
+                <br>
+            </div>
+            <div>
+                {{ form_row(form.creationDate)}}
+            </div>
+            <div>
+                {{ form_row(form.Author)}}
+            </div>
+            <br>
+            {{ form_row(form.submit) }}
+        {{ form_end(form) }}
+    </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}3bci-Exam{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <h2>Nos films </h2>
+        <div class="flex-wrap-center">
+            {% for film in films %}
+                <a href="{{ path('app_medias_details', {id : film.id }) }}">
+                    <div class="card">
+                        <img src="{{ film.imageUrl }}" alt="{{ film.name }}">
+                        <hr>
+                        <div class="card-body">
+                            <h3>{{ film.name }}</h3>
+                            <p>{{ film.synopsis }}</p>
+                        </div>
+                        <hr>
+                        <div class="card-author">
+                            <p>{{ film.Author }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <h2>Nos séries </h2>
+        <div class="flex-wrap-center">
+            {% for serie in series %}
+                <a href="{{ path('app_medias_details', {id : serie.id }) }}">
+                    <div class="card">
+                        <img src="{{ serie.imageUrl }}" alt="{{ serie.name }}">
+                        <hr>
+                        <div class="card-body">
+                            <h3>{{ serie.name }}</h3>
+                            <p>{{ serie.synopsis }}</p>
+                        </div>
+                        <hr>
+                        <div class="card-author">
+                            <p>{{ serie.Author }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
